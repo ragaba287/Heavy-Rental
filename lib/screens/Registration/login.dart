@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/Home/home.dart';
 import './register.dart';
 import '../../utils/constants.dart';
 import '../../widgets/logo.dart';
@@ -125,7 +126,7 @@ class _LoginState extends State<Login> {
                 child: Hero(
                   tag: 'button',
                   child: MainButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.pushNamed(context, Home.id),
                     title: 'دخول',
                   ),
                 ),

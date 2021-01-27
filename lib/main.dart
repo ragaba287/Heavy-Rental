@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screens/Home/home.dart';
 import './screens/Registration/login.dart';
 import './utils/constants.dart';
 import './screens/Registration/register.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         UserType.id: (ctx) => UserType(),
         Register.id: (ctx) => Register(),
         Login.id: (ctx) => Login(),
+        Home.id: (ctx) => Home(),
       },
     );
   }
