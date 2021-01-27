@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import './screens/Registration/login.dart';
+import './utils/constants.dart';
+import './screens/Registration/register.dart';
 import './screens/user_type.dart';
 import './screens/splash.dart';
 
@@ -11,11 +14,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
           fontFamily: 'cairo',
-          primaryColor: Color(0xffF79422),
+          primaryColor: mainColor,
           scaffoldBackgroundColor: Color(0xffFFFAFA),
           textTheme: TextTheme(
             headline1: TextStyle(
-              color: Color(0xffF79422),
+              color: mainColor,
               fontSize: 58,
               fontWeight: FontWeight.w400,
               height: 1,
@@ -26,11 +29,25 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.bold,
               height: 1,
             ),
+            headline3: TextStyle(
+              color: mainColor,
+              fontSize: 40,
+              fontWeight: FontWeight.w400,
+              height: 1,
+            ),
+            headline4: TextStyle(
+              color: Colors.black,
+              fontSize: 10,
+              fontWeight: FontWeight.w700,
+              height: 1,
+            ),
           )),
       initialRoute: Splash.id,
       routes: {
         Splash.id: (ctx) => Splash(),
         UserType.id: (ctx) => UserType(),
+        Register.id: (ctx) => Register(),
+        Login.id: (ctx) => Login(),
       },
     );
   }
