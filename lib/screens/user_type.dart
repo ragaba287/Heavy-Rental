@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/Registration/login.dart';
 import './Registration/register.dart';
 import '../widgets/logo.dart';
 import '../widgets/userTypeCon.dart';
@@ -41,15 +42,23 @@ class _UserTypeState extends State<UserType> {
               UserTypeContainer(
                   type: 'مقدم خدمة', typeImage: 'assets/serviceUser.png'),
               Spacer(),
-              FlatButton(
-                onPressed: () {},
-                color: Colors.transparent,
+              TextButton(
+                onPressed: () => Navigator.pushNamed(context, Login.id),
                 child: Text('تمتلك حساب بالفعل',
                     style: Theme.of(context)
                         .textTheme
                         .headline2
                         .copyWith(color: Color(0xff707070))),
               ),
+              // FlatButton(
+              //   onPressed: () {},
+              //   color: Colors.transparent,
+              //   child: Text('تمتلك حساب بالفعل',
+              //       style: Theme.of(context)
+              //           .textTheme
+              //           .headline2
+              //           .copyWith(color: Color(0xff707070))),
+              // ),
               Divider(
                 color: Color(0x50707070),
                 thickness: 1,

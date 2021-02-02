@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="25.128" height="26.559" viewBox="0 0 25.128 26.559"><defs><style>.a{fill:none;stroke:#727272;stroke-width:2px;}</style></defs><g transform="translate(-17.343 -13.36)"><path class="a" d="M17.564,16.564a5.782,5.782,0,1,0-5.782-5.782A5.78,5.78,0,0,0,17.564,16.564Zm0,4.322C13.7,20.886,6,22.823,6,26.668v2.891H29.128V26.668C29.128,22.823,21.423,20.886,17.564,20.886Z" transform="translate(12.343 9.36)"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="25.128" height="26.559" viewBox="0 0 25.128 26.559">
+  <g id="Footer_Card2" data-name="Footer Card2" transform="translate(-17.343 -13.36)">
+    <path id="Icon_material-person" data-name="Icon material-person" d="M17.564,16.564a5.782,5.782,0,1,0-5.782-5.782A5.78,5.78,0,0,0,17.564,16.564Zm0,4.322C13.7,20.886,6,22.823,6,26.668v2.891H29.128V26.668C29.128,22.823,21.423,20.886,17.564,20.886Z" transform="translate(12.343 9.36)" fill="#fff" stroke="#727272" stroke-width="2"/>
+  </g>
+</svg>
