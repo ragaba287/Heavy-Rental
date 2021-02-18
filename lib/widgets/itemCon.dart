@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/mainItem.dart';
 import 'package:flutter_application_1/utils/constants.dart';
 
 class ItemCon extends StatelessWidget {
@@ -6,17 +7,28 @@ class ItemCon extends StatelessWidget {
     this.itemPrice = 400,
     this.itemName = 'جرافة حديثة',
     this.itemRate = 0,
+    this.itemPic = 'assets/grafaImg.png',
   });
   final String itemName;
   final int itemRate;
   final int itemPrice;
+  final String itemPic;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: InkWell(
         onTap: () {
-          print('Name : $itemName , Price: $itemPrice , Rate: $itemRate');
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => MainItem(
+                      itemName: itemName,
+                      itemRate: itemRate,
+                      itemPrice: itemPrice,
+                      itemPic: itemPic,
+                    )),
+          );
         },
         child: Container(
           height: 190,
@@ -46,7 +58,7 @@ class ItemCon extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       // image: AssetImage('assets/lowerBG.png'),
-                      image: AssetImage('assets/grafaImg.png'),
+                      image: AssetImage(itemPic),
                       fit: BoxFit.fitHeight,
                     ),
                     borderRadius: BorderRadius.circular(10),
