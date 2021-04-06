@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Registration/login.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../screens/Registration/login.dart';
 import './Registration/register.dart';
 import '../widgets/logo.dart';
 import '../widgets/userTypeCon.dart';
@@ -25,56 +26,51 @@ class _UserTypeState extends State<UserType> {
                 'assets/lowerBG.png',
                 color: Color.fromRGBO(255, 255, 255, .1),
                 colorBlendMode: BlendMode.modulate,
+                height: 230.h,
               ),
             ),
           ),
-          Column(
-            children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(120, 100, 120, 30),
-                child: Hero(
-                  tag: 'logo',
-                  child: LogoFull(isFull: false),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.fromLTRB(100.w, 80.h, 100.w, 30.h),
+                  child: Hero(
+                    tag: 'logo',
+                    child: LogoFull(isFull: false),
+                  ),
                 ),
-              ),
-              UserTypeContainer(),
-              SizedBox(height: 25),
-              UserTypeContainer(
-                  type: 'مقدم خدمة', typeImage: 'assets/serviceUser.png'),
-              Spacer(),
-              TextButton(
-                onPressed: () => Navigator.pushNamed(context, Login.id),
-                child: Text('تمتلك حساب بالفعل',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline2
-                        .copyWith(color: Color(0xff707070))),
-              ),
-              // FlatButton(
-              //   onPressed: () {},
-              //   color: Colors.transparent,
-              //   child: Text('تمتلك حساب بالفعل',
-              //       style: Theme.of(context)
-              //           .textTheme
-              //           .headline2
-              //           .copyWith(color: Color(0xff707070))),
-              // ),
-              Divider(
-                color: Color(0x50707070),
-                thickness: 1,
-                height: 0,
-                endIndent: 40,
-                indent: 40,
-              ),
-              SizedBox(height: 15),
-              Hero(
-                tag: 'button',
-                child: MainButton(
-                  onPressed: () => Navigator.of(context).pushNamed(Register.id),
+                UserTypeContainer(),
+                SizedBox(height: 20.h),
+                UserTypeContainer(
+                    type: 'مقدم خدمة', typeImage: 'assets/serviceUser.png'),
+                SizedBox(height: 10.h),
+                TextButton(
+                  onPressed: () => Navigator.pushNamed(context, Login.id),
+                  child: Text('تمتلك حساب بالفعل',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline2
+                          .copyWith(color: Color(0xff707070))),
                 ),
-              ),
-              Spacer(flex: 2)
-            ],
+                Divider(
+                  color: Color(0x50707070),
+                  thickness: .5,
+                  indent: 23.w,
+                  endIndent: 23.w,
+                  height: 5.h,
+                ),
+                SizedBox(height: 5.h),
+                Hero(
+                  tag: 'button',
+                  child: MainButton(
+                    onPressed: () =>
+                        Navigator.of(context).pushNamed(Register.id),
+                  ),
+                ),
+                // SizedBox(height: 99.h),
+              ],
+            ),
           ),
         ],
       ),

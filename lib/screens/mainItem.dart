@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
 import '../widgets/mainButton.dart';
 
 class MainItem extends StatefulWidget {
@@ -88,7 +87,7 @@ class _MainItemState extends State<MainItem> {
                               '${widget.itemPrice} جنية',
                               textDirection: TextDirection.rtl,
                               style: TextStyle(
-                                color: mainColor,
+                                color: Theme.of(context).accentColor,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -128,7 +127,7 @@ class _MainItemState extends State<MainItem> {
                             SizedBox(width: 15),
                             Icon(
                               Icons.star,
-                              color: mainColor,
+                              color: Theme.of(context).accentColor,
                             ),
                             Text(
                               '${widget.itemRate} | 17 تقييم',
@@ -141,7 +140,7 @@ class _MainItemState extends State<MainItem> {
                             Spacer(),
                             Icon(
                               Icons.calendar_today_outlined,
-                              color: mainColor,
+                              color: Theme.of(context).accentColor,
                             ),
                             SizedBox(width: 5),
                             Text('31-08-2020'),
@@ -179,7 +178,7 @@ class _MainItemState extends State<MainItem> {
                         ],
                       ),
                       child: IconButton(
-                        color: mainColor,
+                        color: Theme.of(context).accentColor,
                         icon: Icon(Icons.share),
                         onPressed: () {},
                       ),
@@ -217,7 +216,7 @@ class _MainItemState extends State<MainItem> {
                           ],
                         ),
                         child: IconButton(
-                          color: mainColor,
+                          color: Theme.of(context).accentColor,
                           icon: Icon(Icons.flag),
                           onPressed: () {},
                         ),
@@ -244,7 +243,7 @@ class _MainItemState extends State<MainItem> {
                           children: [
                             Icon(
                               Icons.notifications_active_outlined,
-                              color: mainColor,
+                              color: Theme.of(context).accentColor,
                               size: 30,
                             ),
                             Padding(
@@ -255,7 +254,8 @@ class _MainItemState extends State<MainItem> {
                                   fontWeight: FontWeight.bold,
                                   decoration: TextDecoration.underline,
                                   decorationThickness: 4,
-                                  decorationColor: mainColor,
+                                  decorationColor:
+                                      Theme.of(context).accentColor,
                                   fontSize: 20,
                                 ),
                               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens/user_type.dart';
 import '../widgets/logo.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Splash extends StatefulWidget {
   static const String id = 'splash_screen';
@@ -20,11 +21,14 @@ class _SplashState extends State<Splash> {
               tag: 'lowerBG',
               child: Align(
                 alignment: Alignment.bottomCenter,
-                child: Image.asset('assets/lowerBG.png'),
+                child: Image.asset(
+                  'assets/lowerBG.png',
+                  fit: BoxFit.fitWidth,
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(50, 250, 50, 0),
+              padding: EdgeInsets.fromLTRB(40.w, 180.h, 39.w, 0),
               child: Hero(
                 tag: 'logo',
                 child: LogoFull(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/mainItem.dart';
-import 'package:flutter_application_1/utils/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../screens/mainItem.dart';
 
 class ItemCon extends StatelessWidget {
   ItemCon({
@@ -16,7 +16,7 @@ class ItemCon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
       child: InkWell(
         onTap: () {
           Navigator.push(
@@ -31,15 +31,15 @@ class ItemCon extends StatelessWidget {
           );
         },
         child: Container(
-          height: 190,
-          width: 170,
+          height: 154.h,
+          width: 135.w,
           decoration: BoxDecoration(
             color: Color(0xffF7FAFF),
             border: Border.all(
               color: Colors.white,
               width: 5,
             ),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(.5),
@@ -54,26 +54,26 @@ class ItemCon extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Container(
-                  height: 115,
+                  height: 100.h,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       // image: AssetImage('assets/lowerBG.png'),
                       image: AssetImage(itemPic),
                       fit: BoxFit.fitHeight,
                     ),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(5.r),
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 5,
-                        color: Colors.grey,
-                        spreadRadius: 1,
+                        blurRadius: 3,
+                        color: Color(0x49070707),
+                        spreadRadius: .1,
                       ),
                     ],
                   ),
                 ),
+                Spacer(),
                 Row(
                   children: [
-                    Spacer(),
                     Row(
                       textDirection: TextDirection.rtl,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -81,8 +81,10 @@ class ItemCon extends StatelessWidget {
                         5,
                         (index) => Icon(
                           index < itemRate ? Icons.star : Icons.star_border,
-                          size: 13,
-                          color: index < itemRate ? mainColor : null,
+                          size: 10.w,
+                          color: index < itemRate
+                              ? Theme.of(context).accentColor
+                              : null,
                         ),
                       ),
                     ),
@@ -91,6 +93,7 @@ class ItemCon extends StatelessWidget {
                       itemName,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        fontSize: 12.sp,
                       ),
                     ),
                   ],
@@ -101,7 +104,7 @@ class ItemCon extends StatelessWidget {
                     Text(
                       ' / في اليوم',
                       textDirection: TextDirection.rtl,
-                      style: TextStyle(fontSize: 10),
+                      style: TextStyle(fontSize: 8.sp),
                     ),
                     Text(
                       ' $itemPrice جنية',
@@ -109,10 +112,12 @@ class ItemCon extends StatelessWidget {
                       style: TextStyle(
                         color: Color(0xffF7547B),
                         fontWeight: FontWeight.bold,
+                        fontSize: 12.sp,
                       ),
                     ),
                   ],
                 ),
+                Spacer()
               ],
             ),
           ),

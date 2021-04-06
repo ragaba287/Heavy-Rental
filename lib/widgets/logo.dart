@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LogoFull extends StatelessWidget {
   LogoFull({this.isFull = true});
@@ -9,21 +10,21 @@ class LogoFull extends StatelessWidget {
     return Column(children: [
       Image.asset(
         'assets/logo.png',
-        // height: 0,
+        height: isFull ? 215.h : 150.h,
       ),
-      SizedBox(height: isFull ? 20 : 10),
+      SizedBox(height: isFull ? 25.h : 8.h),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           sideLines(),
-          SizedBox(width: isFull ? 20 : 10),
+          SizedBox(width: isFull ? 15.w : 5.w),
           Text(
             'معدات',
             style: isFull
                 ? Theme.of(context).textTheme.headline1
                 : Theme.of(context).textTheme.headline3,
           ),
-          SizedBox(width: isFull ? 60 : 30),
+          SizedBox(width: isFull ? 40.w : 30.w),
           sideLines(),
         ],
       ),
@@ -41,13 +42,13 @@ class LogoFull extends StatelessWidget {
       children: List.generate(
           3,
           (index) => Padding(
-                padding: EdgeInsets.all(isFull ? 6 : 3),
+                padding: EdgeInsets.all(isFull ? 5.h : 3),
                 child: Container(
-                  height: isFull ? 7 : 4,
-                  width: isFull ? 20 : 15,
+                  height: isFull ? 5.h : 4,
+                  width: isFull ? 15.w : 15,
                   decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(10)),
+                      borderRadius: BorderRadius.circular(10.r)),
                 ),
               )),
     );

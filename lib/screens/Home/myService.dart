@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/utils/constants.dart';
 
 class MyService extends StatelessWidget {
   @override
@@ -8,7 +7,7 @@ class MyService extends StatelessWidget {
       child: Text(
         'خدماتي',
         style: TextStyle(
-          color: mainColor,
+          color: Theme.of(context).accentColor,
           fontSize: 50,
         ),
       ),

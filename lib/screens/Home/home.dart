@@ -3,7 +3,6 @@ import '../../screens/Home/account.dart';
 import '../../screens/Home/dash.dart';
 import '../../screens/Home/myService.dart';
 import '../../screens/Home/request.dart';
-import '../../utils/constants.dart';
 import '../../widgets/mainFAB.dart';
 import '../../widgets/mainAppBar.dart';
 
@@ -63,7 +62,9 @@ class _HomeState extends State<Home> {
                         appTitle = 'حسابي';
                       });
                     },
-                    textColor: currentItem == 3 ? mainColor : Colors.grey,
+                    textColor: currentItem == 3
+                        ? Theme.of(context).accentColor
+                        : Colors.grey,
                   ),
                   navItem(
                     label: 'خدماتي',
@@ -74,7 +75,9 @@ class _HomeState extends State<Home> {
                         appTitle = 'خدماتي';
                       });
                     },
-                    textColor: currentItem == 2 ? mainColor : Colors.grey,
+                    textColor: currentItem == 2
+                        ? Theme.of(context).accentColor
+                        : Colors.grey,
                   ),
                   SizedBox(width: 70),
                   navItem(
@@ -86,7 +89,9 @@ class _HomeState extends State<Home> {
                         appTitle = 'نوع الخدمة';
                       });
                     },
-                    textColor: currentItem == 1 ? mainColor : Colors.grey,
+                    textColor: currentItem == 1
+                        ? Theme.of(context).accentColor
+                        : Colors.grey,
                   ),
                   navItem(
                     label: 'الرئيسية',
@@ -98,7 +103,9 @@ class _HomeState extends State<Home> {
                         appTitle = 'الرئيسية';
                       });
                     },
-                    textColor: currentItem == 0 ? mainColor : Colors.grey,
+                    textColor: currentItem == 0
+                        ? Theme.of(context).accentColor
+                        : Colors.grey,
                   ),
                 ],
               ),

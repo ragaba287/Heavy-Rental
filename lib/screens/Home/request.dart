@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/utils/constants.dart';
 import 'package:flutter_application_1/widgets/serviceItem.dart';
 
 class Request extends StatelessWidget {
@@ -31,8 +30,9 @@ class Request extends StatelessWidget {
                   ],
                 ),
                 child: TextField(
-                  style: TextStyle(color: mainColor, fontSize: 18),
-                  cursorColor: mainColor,
+                  style: TextStyle(
+                      color: Theme.of(context).accentColor, fontSize: 18),
+                  cursorColor: Theme.of(context).accentColor,
                   textAlign: TextAlign.right,
                   textDirection: TextDirection.rtl,
                   decoration: InputDecoration(
@@ -91,7 +91,7 @@ class Request extends StatelessWidget {
                       children: [
                         Container(
                             decoration: BoxDecoration(
-                              color: mainColor,
+                              color: Theme.of(context).accentColor,
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Icon(Icons.add, color: Colors.white)),

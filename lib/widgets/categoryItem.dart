@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main.dart';
-import 'package:flutter_application_1/utils/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5.h),
       child: Container(
-        height: 70,
-        width: 80,
+        height: 90.h,
+        width: 75.w,
         decoration: BoxDecoration(
           color: Color(0xffF7FAFF),
           border: Border.all(
             color: Colors.white,
             width: 5,
           ),
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(15.r),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(.5),
@@ -26,27 +25,19 @@ class CatItem extends StatelessWidget {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: EdgeInsets.fromLTRB(10.w, 13.h, 10.w, 7.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                height: 50,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/cat1.png'),
-                    fit: BoxFit.contain,
-                  ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+              Image.asset('assets/cat1.png'),
+              Spacer(),
               Text(
                 'مواد بناء',
                 style: TextStyle(
-                  fontSize: 10,
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
-                  color: mainColor,
+                  color: Theme.of(context).accentColor,
                 ),
               ),
             ],

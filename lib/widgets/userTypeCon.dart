@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UserTypeContainer extends StatefulWidget {
   UserTypeContainer(
@@ -17,14 +17,14 @@ class _UserTypeContainerState extends State<UserTypeContainer> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
+      padding: EdgeInsets.symmetric(horizontal: 70.w),
       child: Stack(
         children: [
           Container(
-            width: double.infinity,
+            width: 230.w,
             decoration: BoxDecoration(
                 color: Color(0xffF7FAFF),
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(color: Colors.white, width: 5),
                 boxShadow: [
                   BoxShadow(
@@ -35,6 +35,7 @@ class _UserTypeContainerState extends State<UserTypeContainer> {
                   )
                 ]),
             child: Material(
+              borderRadius: BorderRadius.circular(20.r),
               child: InkWell(
                 onTap: () {
                   setState(() {
@@ -43,20 +44,19 @@ class _UserTypeContainerState extends State<UserTypeContainer> {
                 },
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
+                      EdgeInsets.symmetric(horizontal: 55.w, vertical: 14.h),
                   child: Column(children: [
                     Image.asset(
                       widget.typeImage,
-                      height: 90,
+                      height: 80.h,
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 5.h),
                     Text(
                       widget.type,
                       style: TextStyle(
-                        color: mainColor,
-                        fontSize: 20,
+                        color: Theme.of(context).accentColor,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
-                        height: 1,
                       ),
                     )
                   ]),
@@ -69,13 +69,17 @@ class _UserTypeContainerState extends State<UserTypeContainer> {
             child: Align(
               alignment: Alignment.topRight,
               child: Container(
-                height: 30,
-                width: 30,
+                height: 33.h,
+                width: 33.w,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.circular(50.r),
                   color: Color(0xff24C075),
                 ),
-                child: Icon(Icons.check, color: Colors.white),
+                child: Icon(
+                  Icons.check,
+                  color: Colors.white,
+                  size: 20.h,
+                ),
               ),
             ),
           ),

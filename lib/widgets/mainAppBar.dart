@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
 
 class MainAppBar extends StatefulWidget {
   MainAppBar({this.title, this.isBack = false});
@@ -15,11 +14,11 @@ class _MainAppBarState extends State<MainAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: mainColor,
+      backgroundColor: Theme.of(context).accentColor,
       flexibleSpace: Container(
         height: double.infinity,
         decoration: BoxDecoration(
-          color: mainColor,
+          color: Theme.of(context).accentColor,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(30),
             bottomRight: Radius.circular(30),
@@ -59,7 +58,7 @@ class _MainAppBarState extends State<MainAppBar> {
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   border: Border.all(
-                                    color: mainColor,
+                                    color: Theme.of(context).accentColor,
                                     width: 2,
                                   ),
                                   borderRadius: BorderRadius.circular(10),

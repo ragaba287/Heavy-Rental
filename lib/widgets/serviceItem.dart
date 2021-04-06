@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
 
 class ServiceItem extends StatelessWidget {
   ServiceItem({
@@ -64,7 +63,7 @@ class ServiceItem extends StatelessWidget {
                 height: 100,
                 width: 130,
                 decoration: BoxDecoration(
-                  color: mainColor,
+                  color: Theme.of(context).accentColor,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(20),
                     topLeft: Radius.circular(20),

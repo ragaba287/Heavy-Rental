@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainButton extends StatelessWidget {
   MainButton({
@@ -13,15 +13,15 @@ class MainButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      height: 50,
+      height: 50.h,
       minWidth:
           minmWidth == 0.0 ? MediaQuery.of(context).size.width * .8 : minmWidth,
       child: RaisedButton(
         onPressed: onPressed,
-        color: mainColor,
+        color: Theme.of(context).accentColor,
         // splashColor: Colors.green,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(30.r),
         ),
         child: Text(title,
             style: TextStyle(

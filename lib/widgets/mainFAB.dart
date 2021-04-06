@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/ClipShadowPath.dart';
-import '../utils/constants.dart';
 
 class MainFAB extends StatefulWidget {
   MainFAB({this.onTap});
@@ -22,12 +21,12 @@ class _MainFABState extends State<MainFAB> {
           shadow: BoxShadow(
             blurRadius: 0,
             offset: Offset(0, 5),
-            color: mainColor.withOpacity(.22),
+            color: Theme.of(context).accentColor.withOpacity(.22),
           ),
           child: Container(
             height: 120,
             width: 120,
-            color: mainColor,
+            color: Theme.of(context).accentColor,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainTextField extends StatefulWidget {
   MainTextField({
@@ -29,24 +29,24 @@ class _MainTextFieldState extends State<MainTextField> {
         ],
       ),
       child: TextField(
-        style: TextStyle(color: mainColor, fontSize: 18),
-        cursorColor: mainColor,
+        style: TextStyle(color: Theme.of(context).accentColor, fontSize: 22.sp),
+        cursorColor: Theme.of(context).accentColor,
         obscureText: widget.isObscure,
         textAlign: TextAlign.right,
         textDirection: TextDirection.rtl,
         decoration: InputDecoration(
           prefixIcon: Padding(
-            padding: const EdgeInsets.only(left: 10.0),
+            padding: EdgeInsets.only(left: 10.w),
             child: Image.asset(
               widget.iconPath,
-              scale: 8,
+              scale: 8.w,
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(50.r),
           ),
-          contentPadding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+          contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
           border: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.white),
             borderRadius: BorderRadius.circular(50),

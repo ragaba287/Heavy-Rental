@@ -1,31 +1,27 @@
 import 'dart:math';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
 import '../../widgets/categoryItem.dart';
 import '../../widgets/itemCon.dart';
 
 class Dashboard extends StatelessWidget {
-  const Dashboard({
-    Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 20),
+        padding: EdgeInsets.only(bottom: 50.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 37.w),
               child: Text(
                 'أهلا بك , مصباح أشرف',
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20.sp),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 10.h),
               child: Container(
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -37,8 +33,9 @@ class Dashboard extends StatelessWidget {
                   ],
                 ),
                 child: TextField(
-                  style: TextStyle(color: mainColor, fontSize: 18),
-                  cursorColor: mainColor,
+                  style: TextStyle(
+                      color: Theme.of(context).accentColor, fontSize: 18),
+                  cursorColor: Theme.of(context).accentColor,
                   textAlign: TextAlign.right,
                   textDirection: TextDirection.rtl,
                   decoration: InputDecoration(
@@ -76,7 +73,7 @@ class Dashboard extends StatelessWidget {
               ),
             ),
             Container(
-              height: 100,
+              height: 90.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 reverse: true,
@@ -87,7 +84,7 @@ class Dashboard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -103,7 +100,7 @@ class Dashboard extends StatelessWidget {
                     style: TextStyle(
                       decoration: TextDecoration.underline,
                       decorationThickness: 3,
-                      decorationColor: mainColor,
+                      decorationColor: Theme.of(context).accentColor,
                     ),
                   ),
                 ],
@@ -126,7 +123,7 @@ class Dashboard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 20.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -142,7 +139,7 @@ class Dashboard extends StatelessWidget {
                     style: TextStyle(
                       decoration: TextDecoration.underline,
                       decorationThickness: 3,
-                      decorationColor: mainColor,
+                      decorationColor: Theme.of(context).accentColor,
                     ),
                   ),
                 ],

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import './login.dart';
 import '../../widgets/mainButton.dart';
-import '../../utils/constants.dart';
 import '../../widgets/mainTextField.dart';
 import '../../widgets/logo.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Register extends StatefulWidget {
   static const String id = 'reg_screen';
@@ -46,6 +46,108 @@ class RegisterState extends State<Register> {
               ),
             ),
           ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.fromLTRB(100.w, 111.h, 100.w, 30.h),
+                  child: Hero(
+                    tag: 'logo',
+                    child: LogoFull(isFull: false),
+                  ),
+                ),
+                Hero(
+                  tag: 'mainText',
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 10.w, bottom: 10.h),
+                    child: Text(
+                      'التسجيل',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline1
+                          .copyWith(fontSize: 35.sp),
+                    ),
+                  ),
+                ),
+                Hero(
+                  tag: 'mainLine',
+                  child: Container(
+                    width: 100.w,
+                    height: 6.h,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).accentColor,
+                      borderRadius: BorderRadius.circular(10.r),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10.h, bottom: 30.h),
+                  child: Text(
+                    'إنشاء حساب جديد كمقدم خدمة',
+                    style: Theme.of(context).textTheme.headline2.copyWith(
+                          color: Theme.of(context).accentColor,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                  child: Column(
+                    children: List.generate(
+                        6,
+                        (i) => Padding(
+                              padding: EdgeInsets.only(bottom: 10.h),
+                              child: MainTextField(
+                                hintText: hintText[i],
+                                iconPath: iconPath[i],
+                                isObscure: i == 1 || i == 2,
+                              ),
+                            )),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 100.w, vertical: 10.h),
+                  child: Hero(
+                    tag: 'button',
+                    child: MainButton(
+                      onPressed: () {},
+                      title: 'التالي',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 10.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          splashColor: Colors.grey.withOpacity(.5),
+                          onTap: () => Navigator.pushNamed(context, Login.id),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              'تسجيل دخول',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2
+                                  .copyWith(
+                                    color: Theme.of(context).accentColor,
+                                    decoration: TextDecoration.underline,
+                                    decorationThickness: 2,
+                                  ),
+                            ),
+                          )),
+                      SizedBox(width: 10),
+                      Text('هل تمتلك حساب؟',
+                          style: Theme.of(context).textTheme.headline2),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
           Align(
               alignment: Alignment.topRight,
               child: Padding(
@@ -56,97 +158,6 @@ class RegisterState extends State<Register> {
                   onPressed: () => Navigator.pop(context),
                 ),
               )),
-          Column(
-            children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(120, 80, 120, 30),
-                child: Hero(
-                  tag: 'logo',
-                  child: LogoFull(isFull: false),
-                ),
-              ),
-              Hero(
-                tag: 'mainText',
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 20, bottom: 10),
-                  child: Text(
-                    'التسجيل',
-                    style: Theme.of(context).textTheme.headline1,
-                  ),
-                ),
-              ),
-              Hero(
-                tag: 'mainLine',
-                child: Container(
-                  width: 220,
-                  height: 8,
-                  decoration: BoxDecoration(
-                    color: mainColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0, bottom: 30),
-                child: Text(
-                  'إنشاء حساب جديد كمقدم خدمة',
-                  style: Theme.of(context).textTheme.headline2.copyWith(
-                        color: mainColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 40),
-                child: Column(
-                  children: List.generate(
-                      6,
-                      (i) => Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: MainTextField(
-                              hintText: hintText[i],
-                              iconPath: iconPath[i],
-                              isObscure: i == 1 || i == 2,
-                            ),
-                          )),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 120, vertical: 5),
-                child: Hero(
-                  tag: 'button',
-                  child: MainButton(
-                    onPressed: () {},
-                    title: 'التالي',
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  InkWell(
-                      borderRadius: BorderRadius.circular(20),
-                      splashColor: Colors.grey.withOpacity(.5),
-                      onTap: () => Navigator.pushNamed(context, Login.id),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          'تسجيل دخول',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
-                                color: mainColor,
-                                decoration: TextDecoration.underline,
-                                decorationThickness: 2,
-                              ),
-                        ),
-                      )),
-                  SizedBox(width: 10),
-                  Text('هل تمتلك حساب؟',
-                      style: Theme.of(context).textTheme.headline2),
-                ],
-              ),
-            ],
-          ),
         ],
       ),
     );

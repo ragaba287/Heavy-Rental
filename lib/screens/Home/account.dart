@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/utils/constants.dart';
 
 class Account extends StatelessWidget {
   @override
@@ -8,7 +7,7 @@ class Account extends StatelessWidget {
       child: Text(
         'حسابي',
         style: TextStyle(
-          color: mainColor,
+          color: Theme.of(context).accentColor,
           fontSize: 50,
         ),
       ),
