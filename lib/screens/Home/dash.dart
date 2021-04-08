@@ -73,7 +73,7 @@ class Dashboard extends StatelessWidget {
               ),
             ),
             Container(
-              height: 90.h,
+              height: 100.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 reverse: true,
@@ -107,7 +107,7 @@ class Dashboard extends StatelessWidget {
               ),
             ),
             Container(
-              height: 210,
+              height: 150,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 reverse: true,
@@ -146,7 +146,7 @@ class Dashboard extends StatelessWidget {
               ),
             ),
             Container(
-              height: 210,
+              height: 150,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 reverse: true,

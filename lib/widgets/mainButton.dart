@@ -26,7 +26,7 @@ class MainButton extends StatelessWidget {
         child: Text(title,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.bold,
             )),
       ),

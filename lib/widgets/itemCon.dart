@@ -93,7 +93,7 @@ class ItemCon extends StatelessWidget {
                       itemName,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 12.sp,
+                        fontSize: 15.sp,
                       ),
                     ),
                   ],
@@ -104,7 +104,7 @@ class ItemCon extends StatelessWidget {
                     Text(
                       ' / في اليوم',
                       textDirection: TextDirection.rtl,
-                      style: TextStyle(fontSize: 8.sp),
+                      style: TextStyle(fontSize: 10.sp),
                     ),
                     Text(
                       ' $itemPrice جنية',
@@ -112,7 +112,7 @@ class ItemCon extends StatelessWidget {
                       style: TextStyle(
                         color: Color(0xffF7547B),
                         fontWeight: FontWeight.bold,
-                        fontSize: 12.sp,
+                        fontSize: 15.sp,
                       ),
                     ),
                   ],

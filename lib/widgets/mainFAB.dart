@@ -15,7 +15,7 @@ class _MainFABState extends State<MainFAB> {
     return InkWell(
       onTap: widget.onTap,
       child: Transform.translate(
-        offset: Offset(0, -20),
+        offset: Offset(0, -10),
         child: ClipShadowPath(
           clipper: CustomDiamondClipper(),
           shadow: BoxShadow(

@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
           // shape:
           notchMargin: 10,
           child: Transform.translate(
-            offset: Offset(0, -20),
+            offset: Offset(0, -10),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.white,
