@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import './login.dart';
 import '../../widgets/mainButton.dart';
 import '../../widgets/mainTextField.dart';
-import '../../widgets/logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Register extends StatefulWidget {
@@ -12,22 +11,13 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
-  List<String> hintText = [
-    'اسم الشركة',
-    'كلمة المرور',
-    'تأكيد كلمة المرور',
-    'رقم السجل التجاري ',
-    'رقم الهاتف',
-    'المدينة',
-  ];
-
-  List<String> iconPath = [
-    'assets/icons/profile.png',
-    'assets/icons/lock.png',
-    'assets/icons/lock.png',
-    'assets/icons/note.png',
-    'assets/icons/phone.png',
-    'assets/icons/location.png',
+  List textField = [
+    {'hintText': 'اسم الشركة', 'iconPath': 'assets/icons/profile.png'},
+    {'hintText': 'كلمة المرور', 'iconPath': 'assets/icons/lock.png'},
+    {'hintText': 'تأكيد كلمة المرور', 'iconPath': 'assets/icons/lock.png'},
+    {'hintText': 'رقم السجل التجاري', 'iconPath': 'assets/icons/note.png'},
+    {'hintText': 'رقم الهاتف', 'iconPath': 'assets/icons/phone.png'},
+    {'hintText': 'المدينة', 'iconPath': 'assets/icons/location.png'},
   ];
 
   @override
@@ -49,11 +39,11 @@ class RegisterState extends State<Register> {
           SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(100.w, 111.h, 100.w, 30.h),
-                  child: Hero(
-                    tag: 'logo',
-                    child: LogoFull(isFull: false),
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(100.w, 111.h, 100.w, 30.h),
+                    child: Image.asset('assets/logo.png'),
                   ),
                 ),
                 Hero(
@@ -62,10 +52,9 @@ class RegisterState extends State<Register> {
                     padding: EdgeInsets.only(right: 10.w, bottom: 10.h),
                     child: Text(
                       'التسجيل',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline1
-                          .copyWith(fontSize: 35.sp),
+                      style: Theme.of(context).textTheme.headline1.copyWith(
+                            fontSize: 35.sp,
+                          ),
                     ),
                   ),
                 ),
@@ -98,8 +87,8 @@ class RegisterState extends State<Register> {
                         (i) => Padding(
                               padding: EdgeInsets.only(bottom: 10.h),
                               child: MainTextField(
-                                hintText: hintText[i],
-                                iconPath: iconPath[i],
+                                hintText: textField[i]['hintText'],
+                                iconPath: textField[i]['iconPath'],
                                 isObscure: i == 1 || i == 2,
                               ),
                             )),

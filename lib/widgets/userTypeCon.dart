@@ -17,8 +17,9 @@ class _UserTypeContainerState extends State<UserTypeContainer> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 70.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           Container(
             width: 230.w,
@@ -64,16 +65,18 @@ class _UserTypeContainerState extends State<UserTypeContainer> {
               ),
             ),
           ),
-          Visibility(
-            visible: checkMark,
-            child: Align(
-              alignment: Alignment.topRight,
+          Positioned(
+            top: -10,
+            left: -5,
+            child: Visibility(
+              visible: checkMark,
               child: Container(
                 height: 33.h,
-                width: 33.w,
+                width: 33.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50.r),
-                  color: Color(0xff24C075),
+                  // color: Color(0xff24C075),
+                  color: Theme.of(context).accentColor,
                 ),
                 child: Icon(
                   Icons.check,

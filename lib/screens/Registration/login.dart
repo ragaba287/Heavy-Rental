@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../screens/Home/home.dart';
 import './register.dart';
-import '../../widgets/logo.dart';
 import '../../widgets/mainButton.dart';
 import '../../widgets/mainTextField.dart';
 
@@ -30,11 +29,11 @@ class _LoginState extends State<Login> {
           SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(100.w, 111.h, 100.w, 30.h),
-                  child: Hero(
-                    tag: 'logo',
-                    child: LogoFull(isFull: false),
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(100.w, 100.h, 100.w, 30.h),
+                    child: Image.asset('assets/logo.png'),
                   ),
                 ),
                 Hero(

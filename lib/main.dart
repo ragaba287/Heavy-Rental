@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
                 height: 1,
               ),
             )),
-        initialRoute: Splash.id,
+        initialRoute: UserType.id,
         routes: {
           Splash.id: (ctx) => Splash(),
           UserType.id: (ctx) => UserType(),
