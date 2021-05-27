@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/mainButton.dart';
+import '../widgets/mainWidgets/mainButton.dart';
 
 class MainItem extends StatefulWidget {
   static const String id = 'mainItem_screen';

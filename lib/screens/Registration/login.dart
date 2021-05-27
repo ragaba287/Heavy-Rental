@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../screens/Home/home.dart';
 import './register.dart';
-import '../../widgets/mainButton.dart';
-import '../../widgets/mainTextField.dart';
+import '../../widgets/mainWidgets/mainButton.dart';
+import '../../widgets/mainWidgets/mainTextField.dart';
 
 class Login extends StatefulWidget {
   static const String id = 'login_screen';
@@ -21,7 +22,7 @@ class _LoginState extends State<Login> {
             bottom: 0,
             width: 1.sw,
             child: Image.asset(
-              'assets/lowerBG.png',
+              lowerBackgroundPath,
               color: Color.fromRGBO(255, 255, 255, .1),
               colorBlendMode: BlendMode.modulate,
             ),
@@ -116,7 +117,12 @@ class _LoginState extends State<Login> {
                   child: Hero(
                     tag: 'button',
                     child: MainButton(
-                      onPressed: () => Navigator.pushNamed(context, Home.id),
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Home(),
+                        ),
+                      ),
                       title: 'دخول',
                     ),
                   ),
@@ -129,8 +135,12 @@ class _LoginState extends State<Login> {
                       InkWell(
                           borderRadius: BorderRadius.circular(20),
                           splashColor: Colors.grey.withOpacity(.5),
-                          onTap: () =>
-                              Navigator.pushNamed(context, Register.id),
+                          onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Register(),
+                                ),
+                              ),
                           child: Text(
                             'إنشاء حساب جديد',
                             style:

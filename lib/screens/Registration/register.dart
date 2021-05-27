@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/Home/home.dart';
+import '../../utils/constants.dart';
 import './login.dart';
-import '../../widgets/mainButton.dart';
-import '../../widgets/mainTextField.dart';
+import '../../widgets/mainWidgets/mainButton.dart';
+import '../../widgets/mainWidgets/mainTextField.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Register extends StatefulWidget {
@@ -22,6 +24,8 @@ class RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
+    final node = FocusScope.of(context);
+
     return Scaffold(
       body: Stack(
         children: [
@@ -30,7 +34,7 @@ class RegisterState extends State<Register> {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Image.asset(
-                'assets/lowerBG.png',
+                lowerBackgroundPath,
                 color: Color.fromRGBO(255, 255, 255, .1),
                 colorBlendMode: BlendMode.modulate,
               ),
@@ -43,7 +47,7 @@ class RegisterState extends State<Register> {
                   tag: 'logo',
                   child: Container(
                     padding: EdgeInsets.fromLTRB(100.w, 111.h, 100.w, 30.h),
-                    child: Image.asset('assets/logo.png'),
+                    child: Image.asset(logoPath),
                   ),
                 ),
                 Hero(
@@ -83,7 +87,7 @@ class RegisterState extends State<Register> {
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Column(
                     children: List.generate(
-                        6,
+                        textField.length,
                         (i) => Padding(
                               padding: EdgeInsets.only(bottom: 10.h),
                               child: MainTextField(
@@ -100,7 +104,18 @@ class RegisterState extends State<Register> {
                   child: Hero(
                     tag: 'button',
                     child: MainButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          // scrollController.jumpTo(400);
+                          node.nextFocus();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Home(),
+                            ),
+                          );
+                        });
+                      },
                       title: 'التالي',
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/constants.dart';
 import '../screens/user_type.dart';
 
 class Splash extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SplashState extends State<Splash> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Image.asset(
-                  'assets/lowerBG.png',
+                  lowerBackgroundPath,
                   fit: BoxFit.fitWidth,
                 ),
               ),

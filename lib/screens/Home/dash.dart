@@ -16,7 +16,7 @@ class Dashboard extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 37.w),
               child: Text(
-                'أهلا بك , مصباح أشرف',
+                'أهلا بك , أحمد رجب',
                 style: TextStyle(fontSize: 20.sp),
               ),
             ),
@@ -42,14 +42,14 @@ class Dashboard extends StatelessWidget {
                     suffixIcon: Padding(
                       padding: const EdgeInsets.only(right: 5.0),
                       child: Image.asset(
-                        'assets/icons/profile.png',
+                        'assets/icons/search.png',
                         scale: 8,
                       ),
                     ),
                     prefixIcon: Padding(
                       padding: const EdgeInsets.only(left: 10.0),
                       child: Image.asset(
-                        'assets/icons/profile.png',
+                        'assets/icons/filter.png',
                         scale: 8,
                       ),
                     ),
@@ -78,7 +78,9 @@ class Dashboard extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 reverse: true,
                 itemBuilder: (ctx, index) {
-                  return CatItem();
+                  return CatItem(
+                    catName: 'مواد  ${index + 1}',
+                  );
                 },
                 itemCount: 10,
               ),
@@ -107,7 +109,7 @@ class Dashboard extends StatelessWidget {
               ),
             ),
             Container(
-              height: 150,
+              height: 200.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 reverse: true,
@@ -146,7 +148,7 @@ class Dashboard extends StatelessWidget {
               ),
             ),
             Container(
-              height: 150,
+              height: 200.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 reverse: true,

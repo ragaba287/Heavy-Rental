@@ -19,6 +19,7 @@ class _MainTextFieldState extends State<MainTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width - 80,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -44,6 +45,10 @@ class _MainTextFieldState extends State<MainTextField> {
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.white),
+            borderRadius: BorderRadius.circular(50.r),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Theme.of(context).accentColor),
             borderRadius: BorderRadius.circular(50.r),
           ),
           contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),

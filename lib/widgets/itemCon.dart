@@ -32,7 +32,8 @@ class ItemCon extends StatelessWidget {
         },
         child: Container(
           height: 154.h,
-          width: 135.w,
+          width: 140.w,
+          padding: const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
             color: Color(0xffF7FAFF),
             border: Border.all(
@@ -48,78 +49,73 @@ class ItemCon extends StatelessWidget {
               )
             ],
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Container(
-                  height: 100.h,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      // image: AssetImage('assets/lowerBG.png'),
-                      image: AssetImage(itemPic),
-                      fit: BoxFit.fitHeight,
-                    ),
-                    borderRadius: BorderRadius.circular(5.r),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 3,
-                        color: Color(0x49070707),
-                        spreadRadius: .1,
-                      ),
-                    ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                height: 100.h,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(itemPic),
+                    fit: BoxFit.fitHeight,
                   ),
-                ),
-                Spacer(),
-                Row(
-                  children: [
-                    Row(
-                      textDirection: TextDirection.rtl,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: List.generate(
-                        5,
-                        (index) => Icon(
-                          index < itemRate ? Icons.star : Icons.star_border,
-                          size: 10.w,
-                          color: index < itemRate
-                              ? Theme.of(context).accentColor
-                              : null,
-                        ),
-                      ),
-                    ),
-                    Spacer(),
-                    Text(
-                      itemName,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15.sp,
-                      ),
+                  borderRadius: BorderRadius.circular(5.r),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 3,
+                      color: Color(0x49070707),
+                      spreadRadius: .1,
                     ),
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      ' / في اليوم',
-                      textDirection: TextDirection.rtl,
-                      style: TextStyle(fontSize: 10.sp),
+              ),
+              Spacer(),
+              Wrap(
+                textDirection: TextDirection.rtl,
+                children: [
+                  Text(
+                    itemName,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15.sp,
                     ),
-                    Text(
-                      ' $itemPrice جنية',
-                      textDirection: TextDirection.rtl,
-                      style: TextStyle(
-                        color: Color(0xffF7547B),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15.sp,
+                  ),
+                  Row(
+                    textDirection: TextDirection.rtl,
+                    children: List.generate(
+                      5,
+                      (index) => Icon(
+                        index < itemRate ? Icons.star : Icons.star_border,
+                        size: 12.w,
+                        color: index < itemRate
+                            ? Theme.of(context).accentColor
+                            : null,
                       ),
                     ),
-                  ],
-                ),
-                Spacer()
-              ],
-            ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    ' / في اليوم',
+                    textDirection: TextDirection.rtl,
+                    style: TextStyle(fontSize: 12.sp),
+                  ),
+                  Text(
+                    ' $itemPrice جنية',
+                    textDirection: TextDirection.rtl,
+                    style: TextStyle(
+                      color: Color(0xffF7547B),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15.sp,
+                    ),
+                  ),
+                ],
+              ),
+              Spacer()
+            ],
           ),
         ),
       ),
